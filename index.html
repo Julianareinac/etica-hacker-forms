@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ética hacker, ciberseguridad y delitos informáticos</title>
+  <link rel="icon" href="image.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #efe7f6;
+      --card: #fff;
+      --accent: #673ab7;
+      --muted: #5f6368;
+      --required: #d93025;
+      --input-border: #dadce0;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: Roboto, Arial, sans-serif;
+      background: var(--bg);
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      padding: 28px
+    }
+
+    .container {
+      width: min(650px, 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 18px
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
+      overflow: hidden
+    }
+
+    .card::before {
+      content: "";
+      display: block;
+      height: 14px;
+      background: linear-gradient(90deg, var(--accent), #7e57c2)
+    }
+
+    .card .body {
+      padding: 22px
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 400
+    }
+
+    .desc {
+      color: #222;
+      margin: 0 0 20px;
+      padding: 20px 0;
+      font-size: 15px;
+      font-weight: 400;
+      border-bottom: 1px solid #dadce0
+    }
+
+    .note {
+      color: var(--required);
+      font-size: 13px
+    }
+
+    .question {
+      background: #fff;
+      border-radius: 10px;
+      padding: 18px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .04)
+    }
+
+    .q-label {
+      font-weight: 400;
+      margin-bottom: 8px;
+      padding-bottom: 20px
+    }
+
+    .input-line {
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .input-line input {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid var(--input-border);
+      padding: 10px 2px;
+      font-size: 14px;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .input-line input:focus {
+      border-bottom-color: #1a73e8
+    }
+
+    /* error estilo Google Forms */
+    .input-line input.error {
+      border-bottom: 2px solid var(--required);
+      background-color: #fce8e6;
+    }
+
+    .error-msg {
+      color: var(--required);
+      font-size: 13px;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .error-msg::before {
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="%23d93025" stroke-width="2"/><rect x="11" y="7" width="2" height="7" fill="%23d93025"/><rect x="11" y="15" width="2" height="2" fill="%23d93025"/></svg>') no-repeat center;
+      background-size: contain;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      gap: 12px;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 550
+    }
+
+    .link-reset {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 450
+    }
+
+    .footer {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 6px
+    }
+
+    .google-brand {
+      margin-top: 12px;
+      font-size: 20px;
+      font-weight: 400;
+      color: #5f6368
+    }
+
+    .google-brand span {
+      font-weight: 450;
+      color: #3c4043
+    }
+
+    /* --- Media queries para móvil --- */
+    @media (max-width: 600px) {
+      body {
+        padding: 16px;
+      }
+
+      h1 {
+        font-size: 22px;
+        line-height: 1.2;
+      }
+
+      .desc {
+        font-size: 14px;
+        padding: 12px 0;
+      }
+
+      .q-label {
+        font-size: 14px;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 14px;
+      }
+
+      .actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .link-reset {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <section class="card">
+      <div class="body">
+        <h1>Ética hacker, ciberseguridad y delitos informáticos</h1>
+        <p class="desc">Antes de iniciar, queremos conocer tu punto de partida. No hay respuestas correctas:
+          esto nos ayudará a orientar la actividad y la discusión.</p>
+        <div class="note">* Indica que la pregunta es obligatoria</div>
+      </div>
+    </section>
+
+    <div class="question">
+      <div class="q-label">Nombre completo <span style="color:var(--required)">*</span></div>
+      <div class="input-line"><input id="nombre" type="text" placeholder="Tu respuesta"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Número de identificación <span style="color:var(--required)">*</span></div>
+      <div class="input-line"><input id="identificacion" type="text" placeholder="Tu respuesta"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Correo institucional <span style="color:var(--required)">*</span></div>
+      <div class="input-line"><input id="email" type="email" placeholder="Tu respuesta"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Una palabra que represente lo que crees que es ética hacker <span
+          style="color:var(--required)">*</span></div>
+      <div class="input-line"><input id="etica" type="text" placeholder="Tu respuesta"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">¿Qué crees que es ciberseguridad? <span style="color:var(--required)">*</span></div>
+      <div class="input-line"><input id="ciberseguridad" type="text" placeholder="Tu respuesta"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Menciona un delito informático que conozcas <span style="color:var(--required)">*</span></div>
+      <div class="input-line"><input id="delito" type="text" placeholder="Tu respuesta"></div>
+    </div>
+
+    <div class="actions">
+      <button id="btnEnviar" class="btn">Enviar</button>
+      <a id="btnBorrar" class="link-reset" href="#">Borrar formulario</a>
+    </div>
+
+    <div class="footer">
+      Este formulario se creó en La Universidad del Quindío. - <a href="#" style="color:var(--accent)">Contactar
+        con el propietario del formulario</a>
+      <div class="google-brand"><span>Google</span> Formularios</div>
+    </div>
+  </div>
+
+  <script>
+    const fields = {
+      nombre: document.getElementById('nombre'),
+      identificacion: document.getElementById('identificacion'),
+      email: document.getElementById('email'),
+      etica: document.getElementById('etica'),
+      ciberseguridad: document.getElementById('ciberseguridad'),
+      delito: document.getElementById('delito')
+    };
+    const btnEnviar = document.getElementById('btnEnviar');
+    const btnBorrar = document.getElementById('btnBorrar');
+
+    function clearErrors() {
+      document.querySelectorAll('.error-msg').forEach(e => e.remove());
+      Object.values(fields).forEach(i => {
+        i.classList.remove('error');
+        i.style.backgroundColor = 'transparent';
+      });
+    }
+    function showError(input, msg) {
+      input.classList.add('error');
+      const m = document.createElement('div');
+      m.className = 'error-msg'; m.textContent = msg;
+      input.parentElement.appendChild(m);
+    }
+
+    btnBorrar.addEventListener('click', (e) => {
+      e.preventDefault();
+      clearErrors();
+      Object.values(fields).forEach(f => f.value = '');
+      sessionStorage.clear();
+    });
+
+    btnEnviar.addEventListener('click', (e) => {
+      e.preventDefault();
+      clearErrors();
+      let ok = true;
+      if (!fields.nombre.value.trim()) { showError(fields.nombre, 'Esta pregunta es obligatoria'); ok = false; }
+      if (!fields.identificacion.value.trim()) { showError(fields.identificacion, 'Esta pregunta es obligatoria'); ok = false; }
+      if (!fields.email.value.trim()) { showError(fields.email, 'Esta pregunta es obligatoria'); ok = false; }
+      if (!fields.etica.value.trim()) { showError(fields.etica, 'Esta pregunta es obligatoria'); ok = false; }
+      if (!fields.ciberseguridad.value.trim()) { showError(fields.ciberseguridad, 'Esta pregunta es obligatoria'); ok = false; }
+      if (!fields.delito.value.trim()) { showError(fields.delito, 'Esta pregunta es obligatoria'); ok = false; }
+      if (!ok) return;
+
+      // Guardar SOLO nombre, identificación y correo
+      sessionStorage.setItem('demo_name', fields.nombre.value.trim());
+      sessionStorage.setItem('demo_id', fields.identificacion.value.trim());
+      sessionStorage.setItem('demo_email', fields.email.value.trim());
+
+      btnEnviar.disabled = true;
+      btnEnviar.textContent = 'Enviando...';
+      setTimeout(() => { window.location.href = 'debrief.html'; }, 600);
+    });
+  </script>
+</body>
+
+</html>
